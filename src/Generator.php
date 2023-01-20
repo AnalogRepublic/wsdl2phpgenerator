@@ -117,7 +117,7 @@ class Generator implements GeneratorInterface
         $service = $this->wsdl->getService();
         $this->log('Starting to load service '.$service->getName());
 
-        $this->service = new Service($this->config, $service->getName(), $this->types, $service->getDocumentation());
+        $this->service = new Service($this->config, $service->getName() . 'Service', $this->types, $service->getDocumentation());
 
         foreach ($this->wsdl->getOperations() as $function) {
             $this->log('Loading function '.$function->getName());
